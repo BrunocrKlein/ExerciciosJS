@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var sorteados = new Array(6);
+        var aposta = new Array(6);
+        var acertados = [];
+        var numacerto = 0;
+        
+        for(var i = 0; i < sorteados.length; i++){
+            sorteados[i] = Math.floor(Math.random() * (60 - 1 + 1) + 1); 
+        }
+
+        for(var i = 0; i < sorteados.length; i++){
+            aposta[i] = parseInt(prompt("Digite o numero: "));
+        }
+
+        for(var i = 0; i < sorteados.length; i++){
+            if(sorteados[i] == aposta[i]){
+                acertados.push(sorteados[i]);
+                numacerto += 1;
+            }
+        }
+
+        for(var i = 0; i < sorteados.length; i++){
+            console.log("Numeros sorteados: " + sorteados[i]);
+        }
+        
+        console.log("Quantidade de acertos: " + numacerto);
+
+        for(var i = 0; i < acertados.length +1; i++){
+            if(acertados.length == 0){
+                console.log("Nao ouve acertos...");
+            }else if(acertados.length > 0){
+                console.log(acertados[i]);
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

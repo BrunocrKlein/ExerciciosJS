@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+ 
+</head>
+<body>
+    
+    <input type="text" id="textbox" value="" placeholder="Numero de caixas para adicionar"><br/>
+    <button onclick="adicionarcaixas()">Adicionar caixas</button>
+    <div id="body"></div>
+
+    <script>
+        function adicionarcaixas(){
+    
+            var n = document.getElementById("textbox").value;
+            var container = document.getElementById("body");
+            while (container.hasChildNodes()) {
+                container.removeChild(container.lastChild);
+            }
+    
+            for (i=0;i<n;i++){
+                container.appendChild(document.createTextNode("Caixa Numero --> " + (i+1) + "   "));
+                var input = document.createElement("input");
+                input.type = "text";
+                input.name = "CaixaNumero" + i;
+                input.value = Math.floor(Math.random() * 100) + 1;
+                container.appendChild(input);
+                container.appendChild(document.createElement("br"));
+            }
+        }
+      </script>
+</body>
+</html>
